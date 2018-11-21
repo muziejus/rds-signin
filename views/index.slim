@@ -1,0 +1,25 @@
+form#signin-form.needs-validation novalidate="true"
+  .row
+    .col-md-6
+      .form-group
+        label for="uni" UNI
+        input#uni.form-control name="uni" tabindex="1" type="text" aria-describedby="uniHelp" placeholder="Your UNI" valid="false"
+        small#uniHelp.form-text.text-muted We do not keep your UNI.
+      .form-group
+        label for="faculty" Associated faculty
+        input#faculty.typeahead.form-control name="faculty" tabindex="4" required="true" autocomplete="off" data-provide="typeahead" type="text" aria-describedby="facultyHelp" placeholder="Course instructor or adviser." 
+        small#helpHelp.form-text.text-muted Who is the faculty member associated with your query?
+    .col-md-6
+      .form-group
+        label for="title" Role
+        input#title.form-control name="role" tabindex="-1" type="text" aria-describedby="titleHelp" placeholder="Your Role" readonly="true"
+        small#titleHelp.form-text.text-muted Your role at Columbia.
+      .form-group
+        label for="dept" Department
+        input#dept.form-control name="dept" tabindex="-1" type="text" aria-describedby="deptHelp" placeholder="Your Department" readonly="true"
+        small#deptHelp.form-text.text-muted Your department or school at Columbia.
+  .form-group
+    label for="help" Help with
+    input#help.form-control name="topic" type="text" tabindex="5" required="true" aria-describedby="helpHelp" placeholder="R, Python, JavaScript, Pandas, etc."
+    small#helpHelp.form-text.text-muted With what do you need help?
+  button#submit.btn.btn-primary type="submit" tabindex="6" Sign In.

@@ -34,7 +34,16 @@ $("#signin-form").submit(function(e){
     // const data = $("#signin-form :input").map(
     console.log($("#signin-form").serialize());
     $.post("/", $(this).serialize(), d => {
-      console.log(d);
+      const data = JSON.parse(d);
+      if (data.message === "success") {
+        $("#alert-box").html("<div class='alert alert-success' role='alert'>Thanks for signing in.</div>");
+      } else {
+        $("#alert-box").html("<div class='alert alert-error' role='alert'>There was some kind of error. Please try agin.</div>");
+      }
+      $(":input").val("");
+      setTimeout(() => {
+        $("#alert-box").html("");
+      }, 5000);
     });
   } else {
     $(":invalid").removeClass("is-valid").addClass("is-invalid");

@@ -9,6 +9,11 @@ require "csv"
 class RDSLogin < Sinatra::Base
 
   get "/" do
+    unless File.file? "log.csv"
+      open("log.csv", "w") do |log|
+        log << %w(time role dept faculty topic).to_csv
+      end
+    end
     slim :index
   end
 
@@ -16,11 +21,11 @@ class RDSLogin < Sinatra::Base
     begin
       open("log.csv", "a") do |log|
         log << [
+          Time.now,
           params["role"],
           params["dept"],
           params["faculty"],
-          params["topic"],
-          Time.now
+          params["topic"]
         ].to_csv
       end
       { message: "success" }.to_json

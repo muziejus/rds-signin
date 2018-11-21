@@ -42,7 +42,7 @@ $("#signin-form").submit(function(e){
       }
       $(":input").val("");
       setTimeout(() => {
-        $("#alert-box").html("");
+        location.reload();
       }, 5000);
     });
   } else {

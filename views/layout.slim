@@ -1,13 +1,16 @@
 doctype html
-html
+html style="height:100%;"
   head
-    title RDS Login
+    title Studio @ Lehman Sign-In
     link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"
 
-  body
-    .container
+  body style="height:100%;"
+    .container.d-flex.align-items-center style="height:100%;"
       .jumbotron
-        h1 RDS Login
+        h1 Studio @ Lehman Sign-In
+
+        p.lead Welcome to the Studio. Please sign-in below with your UNI. We won’t keep your UNI, but we do want to have a general sense of who comes by and what they need.
+
         == yield
 
     script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"

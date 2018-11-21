@@ -20,6 +20,6 @@ form#signin-form.needs-validation novalidate="true"
         small#deptHelp.form-text.text-muted Your department or school, set by your UNI.
   .form-group
     label for="help" Help with
-    input#help.form-control name="topic" type="text" tabindex="5" required="true" aria-describedby="helpHelp" placeholder="R, Python, JavaScript, Pandas, etc."
+    input#help.typeahead.form-control name="topic" type="text" tabindex="5" required="true" autocomplete="off" data-provide="typeahead" aria-describedby="helpHelp" placeholder="R, Python, JavaScript, Pandas, etc." data-source= source
     small#helpHelp.form-text.text-muted With what do you need help?
   button#submit.btn.btn-primary type="submit" tabindex="6" Sign In.

@@ -9,12 +9,15 @@ require "csv"
 class RDSLogin < Sinatra::Base
 
   get "/" do
-    unless File.file? "log.csv"
+    if File.file? "log.csv"
+      source = CSV.read("log.csv", headers: true).map{|row| row["topic"]}.uniq.to_json
+    else
       open("log.csv", "w") do |log|
         log << %w(time role dept faculty topic).to_csv
       end
+      source = nil
     end
-    slim :index
+    slim :index, locals: {source: source}
   end
 
   post "/" do
